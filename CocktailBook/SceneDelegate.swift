@@ -8,9 +8,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     if let windowScene = scene as? UIWindowScene {
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = MainScreenViewController()
+        let cocktailsListView = CockTailsListView()
+        let hostingController = UIHostingController(rootView: cocktailsListView)
+        window.rootViewController = hostingController
         self.window = window
-        window.makeKeyAndVisible()
+        self.window?.makeKeyAndVisible()
     }
   }
 
